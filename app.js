@@ -33,14 +33,9 @@ mongoose.connect(DB_URL)
 app.use(express.json()) // para que express pueda entender el json
 app.use(morgan("dev")) // para que express pueda entender el morgan y ver los datos de las peticiones
 app.use(cors({
-    origin: [
-        "http://localhost:5501", 
-        "http://127.0.0.1:5501", 
-        "https://spontaneous-torrone-6da1a7.netlify.app",
-        "https://spontaneous-torrone-6da1a7.netlify.app/separar_rutas.html"
-    ], 
-    methods: ["GET", "POST", "PUT", "DELETE"], 
-    credentials: true,
+  origin: '*',
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true,
 }));
 
 
